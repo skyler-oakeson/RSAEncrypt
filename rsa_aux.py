@@ -68,8 +68,9 @@ def find_primes_in_range(a, b):
 
 def euler_phi(n):
     """ Euler's Totient """
-    ### your code here
-    pass
-
-    
-
+    tot = 0
+    for i in range(1, n):
+        d, _, _ = xgcd(i, n) 
+        if d == 1:
+            tot += 1
+    return tot

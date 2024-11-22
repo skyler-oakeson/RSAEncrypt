@@ -64,25 +64,26 @@ class rsa_uts(unittest.TestCase):
             # print('{}{} % {} == 1'.format(a, x, 211))
         print('test_mult_inv_03() passed...')
 
-    ### unit test 1 for euler's totient
-#     def test_euler_phi_01(self):
-#         print('test_euler_phi_01()...')
-#         assert euler_phi(45) == 24
-#         print('test_euler_phi_02() passed...')
-#
-#     ### unit test 2 for eulerps totient
-#     def test_euler_phi_02(self):
-#         print('test_euler_phi_02()...')
-#         nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
-#                 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-#         for p in nums:
-#             assert euler_phi(p) == p-1
-#         for p in nums:
-#             for q in nums:
-#                 if p != q:
-#                     assert euler_phi(p*q) == (p-1)*(q-1)
-#         print('test_euler_phi_02() passed...')
-#
+    ## unit test 1 for euler's totient
+    def test_euler_phi_01(self):
+        print('test_euler_phi_01()...')
+        print(f"phi: {euler_phi(45)}")
+        assert euler_phi(45) == 24
+        print('test_euler_phi_02() passed...')
+
+    ## unit test 2 for eulerps totient
+    def test_euler_phi_02(self):
+        print('test_euler_phi_02()...')
+        nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
+                47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+        for p in nums:
+            assert euler_phi(p) == p-1
+        for p in nums:
+            for q in nums:
+                if p != q:
+                    assert euler_phi(p*q) == (p-1)*(q-1)
+        print('test_euler_phi_02() passed...')
+
 #     ### unit test for choose e
 #     def test_choose_e(self):
 #         print('test_choose_e()...')
