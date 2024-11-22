@@ -4,8 +4,8 @@
 #############################################################
 # module: rsa_aux.py
 # description: auxiliay functions for RSA
-# YOUR NAME
-# YOUR A-NUMBER
+# Skyler Oakeson
+# A02308556
 ##############################################################
 
 import numpy as np
@@ -33,8 +33,11 @@ def mult_inv(a, n):
     """
     multiplicative inverse of a in Z^{*}_{n}.
     """
-    ### your code here
-    pass
+    d, x, y = xgcd(a, n)
+    if d != 1:
+        return None
+
+    return (x % n + n) % n
 
 ### A tool you may want to use in your code.
 ### it's used in rsa_uts.py.
