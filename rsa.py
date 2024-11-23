@@ -18,33 +18,41 @@ class rsa(object):
 
     @staticmethod
     def choose_e(eu_phi_n):
-        ### your code here
-        pass
+        rel = [i for i in range(1, eu_phi_n) if xgcd(i, eu_phi_n)[0] == 1]
+        return rel[random.randint(0, len(rel)-1)]
 
     @staticmethod
     def generate_keys_from_pqe(p, q, e):
-        ### your code here
-        pass
+        n = p*q
+        d = mult_inv(e, euler_phi(n))
+        return (e, n), (d, n)
+
     
     @staticmethod
     def encrypt(m, pk):
-        ### your code here
-        pass
+        e, n = pk
+        return (m**e) % n
       
     @staticmethod
     def decrypt(c, sk):
-        ### your code here
-        pass
+        d, n = sk
+        return (c**d) % n
+
 
     @staticmethod
     def encrypt_text(text, pub_key):
-        ### your code here
-        pass
+        encrypted = []
+        for char in text:
+            encrypted.append(rsa.encrypt(ord(char), pub_key))
+        return encrypted
+
        
     @staticmethod
     def decrypt_cryptotexts(cryptotexts, sec_key):
-        ### your code here
-        pass
+        decrypted = ""
+        for num in cryptotexts:
+            decrypted += chr(rsa.decrypt(num, sec_key))
+        return decrypted
     
     
 
