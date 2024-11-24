@@ -24,5 +24,7 @@ class hack_rsa(object):
             for q in primes:
                 if p * q == n:
                     d = mult_inv(e, (p-1)*(q-1))
-                    return (d, n)
-        return None
+                    sec_key = (d, n)
+                    # print(cryptotext)
+                    # print(rsa.decrypt(cryptotext, sec_key))
+                    return sec_key
