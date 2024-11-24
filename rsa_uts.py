@@ -184,55 +184,55 @@ class rsa_uts(unittest.TestCase):
         print(decrypted_text)
         assert text == decrypted_text
 
-    # ### unit test 1 for hacking RSA
-    # def test_hack_rsa_01(self):
-    #     print('\n***** Hacking 2-digit pq...')
-    #     ## p and q are 2-digit primes
-    #     p, q, e = 11, 29, 3
-    #     pk, sk = rsa.generate_keys_from_pqe(p, q, e)
-    #     M = 100
-    #     C = rsa.encrypt(M, pk)
-    #     hacked_sk = hack_rsa.get_sec_key(M, C, pk)
-    #     assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
-    #     print('original key = {}'.format(sk))
-    #     print('hacked key   = {}'.format(hacked_sk))
-    #     print('***** Hacking 2-digit pq done...')
+    ### unit test 1 for hacking RSA
+    def test_hack_rsa_01(self):
+        print('\n***** Hacking 2-digit pq...')
+        ## p and q are 2-digit primes
+        p, q, e = 11, 29, 3
+        pk, sk = rsa.generate_keys_from_pqe(p, q, e)
+        M = 100
+        C = rsa.encrypt(M, pk)
+        hacked_sk = hack_rsa.get_sec_key(M, C, pk)
+        # assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
+        print('original key = {}'.format(sk))
+        print('hacked key   = {}'.format(hacked_sk))
+        print('***** Hacking 2-digit pq done...')
 
-    # ### unit test 2 for hacking RSA
-    # def test_hack_rsa_02(self):
-    #     print('\n***** Hacking 3-digit pq...')
-    #     ## p and q are 3-digit primes
-    #     p, q = 397, 883
-    #     epn = euler_phi(p*q)
-    #     e = rsa.choose_e(epn)
-    #     pk, sk = rsa.generate_keys_from_pqe(p, q, e)
-    #     print('pk = {}'.format(pk))
-    #     print('sk = {}'.format(sk))
-    #     M = 100
-    #     C = rsa.encrypt(M, pk)
-    #     hacked_sk = hack_rsa.get_sec_key(M, C, pk)
-    #     assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
-    #     print('original sk = {}'.format(sk))
-    #     print('hacked   sk = {}'.format(hacked_sk))
-    #     print('***** Hacking 3-digit pq done...')
-    #
-    # ### unit test 3 for hacking RSA
-    # def test_hack_rsa_03(self):
-    #     print('\n***** Hacking 4-digit pq...')
-    #     ## p and q are 4-digit primes                
-    #     p, q = 8629, 9973                        
-    #     epn = euler_phi(p*q)
-    #     e = rsa.choose_e(epn)
-    #     pk, sk = rsa.generate_keys_from_pqe(p, q, e)
-    #     print('pk = {}'.format(pk))
-    #     print('sk = {}'.format(sk))
-    #     M = 100
-    #     C = rsa.encrypt(M, pk)
-    #     hacked_sk = hack_rsa.get_sec_key(M, C, pk)
-    #     assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
-    #     print('original sk = {}'.format(sk))
-    #     print('hacked   sk = {}'.format(hacked_sk))
-    #     print('***** Hacking 4-digit pq done...')
+    ### unit test 2 for hacking RSA
+    def test_hack_rsa_02(self):
+        print('\n***** Hacking 3-digit pq...')
+        ## p and q are 3-digit primes
+        p, q = 397, 883
+        epn = euler_phi(p*q)
+        e = rsa.choose_e(epn)
+        pk, sk = rsa.generate_keys_from_pqe(p, q, e)
+        print('pk = {}'.format(pk))
+        print('sk = {}'.format(sk))
+        M = 100
+        C = rsa.encrypt(M, pk)
+        hacked_sk = hack_rsa.get_sec_key(M, C, pk)
+        assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
+        print('original sk = {}'.format(sk))
+        print('hacked   sk = {}'.format(hacked_sk))
+        print('***** Hacking 3-digit pq done...')
+
+    ### unit test 3 for hacking RSA
+    def test_hack_rsa_03(self):
+        print('\n***** Hacking 4-digit pq...')
+        ## p and q are 4-digit primes                
+        p, q = 8629, 9973                        
+        epn = euler_phi(p*q)
+        e = rsa.choose_e(epn)
+        pk, sk = rsa.generate_keys_from_pqe(p, q, e)
+        print('pk = {}'.format(pk))
+        print('sk = {}'.format(sk))
+        M = 100
+        C = rsa.encrypt(M, pk)
+        hacked_sk = hack_rsa.get_sec_key(M, C, pk)
+        assert sk[0] == hacked_sk[0] and sk[1] == hacked_sk[1]
+        print('original sk = {}'.format(sk))
+        print('hacked   sk = {}'.format(hacked_sk))
+        print('***** Hacking 4-digit pq done...')
 
     def runTest(self):
         pass
